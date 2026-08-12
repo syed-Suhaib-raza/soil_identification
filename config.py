@@ -49,7 +49,7 @@ REPEATED_HOLDOUT_BASE_SEED = 1000
 # and no cropping. Keep IMAGE_WIDTH:IMAGE_HEIGHT at 4:3 if you change these.
 IMAGE_WIDTH = 256
 IMAGE_HEIGHT = 192
-BACKBONE = "resnet50"     # "custom" (default), "resnet18", "resnet50", or "densenet121"
+BACKBONE = "densenet121"     # "custom" (default), "resnet18", "resnet50", or "densenet121"
 BATCH_SIZE = 16
 EPOCHS = 60
 PATIENCE = 10            # early-stopping patience, in epochs
