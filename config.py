@@ -11,7 +11,7 @@ Central configuration for the soil heavy-metal regression pipeline.
 
 import torch
 
-# ---------------------------------------------------------------- paths ---  # excel with the 6 metal values
+# ---------------------------------------------------------------- paths ---
 IMAGE_DIR = r"C:\Users\ssuhaib\Desktop\data\images"                      # folder containing all ~650 images
 GROUND_TRUTH_XLSX = r"C:\Users\ssuhaib\Desktop\data\Data240226_augmented.xlsx"
 SHEET_NAME = 0
@@ -34,6 +34,13 @@ TEST_FRACTION_OF_GROUPS = 0.20   # ~7 of the 36 originals held out for the final
 FINAL_ES_FRACTION_OF_GROUPS = 0.15  # small internal val slice for early-stopping the final model
 N_FOLDS = 5
 RANDOM_SEED = 42
+
+# For repeated_holdout.py: repeats the dev/test split across this many
+# different seeds, training one final model per split, to see how much
+# final test performance varies given only ~36 independent samples --
+# a single fixed 80/20 split is a noisy estimate at this sample size.
+N_REPEATED_HOLDOUTS = 10
+REPEATED_HOLDOUT_BASE_SEED = 1000
 
 # ------------------------------------------------------------ image/model -
 # Native photos are 1280x960 (4:3). Resizing to a square would squash/distort
