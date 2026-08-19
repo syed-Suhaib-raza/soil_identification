@@ -54,15 +54,16 @@ class CustomCNN(nn.Module):
             block(16, 32),
             block(32, 64),
             block(64, 128),
+            block(128, 256)
         )
         self.pool = nn.AdaptiveAvgPool2d(1)
         self.head = nn.Sequential(
             nn.Flatten(),
             nn.Dropout(0.4),
-            nn.Linear(128, 64),
+            nn.Linear(256, 128),
             nn.ReLU(inplace=True),
             nn.Dropout(0.3),
-            nn.Linear(64, n_outputs),
+            nn.Linear(128, n_outputs),
         )
 
     def forward(self, x):

@@ -47,11 +47,11 @@ REPEATED_HOLDOUT_BASE_SEED = 1000
 # them, so we resize to a target that keeps the same 4:3 ratio instead --
 # since it's an exact ratio match, this is a pure downscale, no distortion
 # and no cropping. Keep IMAGE_WIDTH:IMAGE_HEIGHT at 4:3 if you change these.
-IMAGE_WIDTH = 256
-IMAGE_HEIGHT = 192
-BACKBONE = "densenet121"     # "custom" (default), "resnet18", "resnet50", or "densenet121"
+IMAGE_WIDTH = 600
+IMAGE_HEIGHT = 450
+BACKBONE = "custom"     # "custom" (default), "resnet18", "resnet50", or "densenet121"
 BATCH_SIZE = 16
-EPOCHS = 60
+EPOCHS = 50
 PATIENCE = 10            # early-stopping patience, in epochs
 LR = 1e-3
 WEIGHT_DECAY = 1e-4
